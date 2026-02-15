@@ -1,0 +1,14 @@
+{
+  "name": "pesce-pandolfo-website",
+  "version": "1.0.0",
+  "description": "Sito matrimonio Viola & Federico - 13 Giugno 2026",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "author": "Alessandro Alfano",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

@@ -1,0 +1,227 @@
+---
+layout: layout.njk
+---
+
+{# ===== HERO ===== #}
+<section class="hero" id="hero">
+  <p class="hero__date-label">{{ site.giorno }}</p>
+  <h1 class="hero__names">Viola</h1>
+  <p class="hero__and">&amp;</p>
+  <h1 class="hero__names">Federico</h1>
+  <p class="hero__date">{{ site.dataDisplay }}</p>
+
+  <div class="hero__countdown" id="countdown">
+    <div class="countdown__item">
+      <span class="countdown__number" id="cd-days">--</span>
+      <span class="countdown__label">Giorni</span>
+    </div>
+    <div class="countdown__item">
+      <span class="countdown__number" id="cd-hours">--</span>
+      <span class="countdown__label">Ore</span>
+    </div>
+    <div class="countdown__item">
+      <span class="countdown__number" id="cd-mins">--</span>
+      <span class="countdown__label">Minuti</span>
+    </div>
+    <div class="countdown__item">
+      <span class="countdown__number" id="cd-secs">--</span>
+      <span class="countdown__label">Secondi</span>
+    </div>
+  </div>
+
+  <a href="#programma" class="hero__scroll" aria-label="Scorri verso il basso">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </a>
+</section>
+
+{# ===== PROGRAMMA ===== #}
+<section class="section" id="programma">
+  <div class="container">
+    <h2 class="section__title">La Giornata</h2>
+    <div class="timeline">
+      <div class="timeline__item">
+        <div class="timeline__time">{{ site.orari.ritrovo }}</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <h3 class="timeline__title">Ritrovo</h3>
+          <p class="timeline__desc">Vi aspettiamo per il ritrovo prima della cerimonia</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__time">{{ site.orari.cerimonia }}</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <h3 class="timeline__title">Cerimonia</h3>
+          <p class="timeline__desc">Il momento tanto atteso</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__time">{{ site.orari.ricevimento }}</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <h3 class="timeline__title">Ricevimento</h3>
+          <p class="timeline__desc">Festeggiamo insieme alla Tenuta San Lorenzo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== LOCATION ===== #}
+<section class="section section--alt" id="location">
+  <div class="container">
+    <h2 class="section__title">Dove Trovarci</h2>
+    <div class="locations">
+
+      <div class="location-card">
+        <iframe
+          class="location-card__map"
+          src="{{ site.locations.ritrovo.mapsEmbed }}"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mappa ritrovo pre-cerimonia">
+        </iframe>
+        <div class="location-card__info">
+          <h3 class="location-card__name">{{ site.locations.ritrovo.nome }}</h3>
+          <p class="location-card__address">{{ site.locations.ritrovo.indirizzo }}</p>
+          <a href="https://www.google.com/maps?q={{ site.locations.ritrovo.lat }},{{ site.locations.ritrovo.lng }}"
+             target="_blank" rel="noopener"
+             class="location-card__link">Apri in Google Maps</a>
+        </div>
+      </div>
+
+      <div class="location-card">
+        <iframe
+          class="location-card__map"
+          src="{{ site.locations.ricevimento.mapsEmbed }}"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mappa Tenuta San Lorenzo">
+        </iframe>
+        <div class="location-card__info">
+          <h3 class="location-card__name">{{ site.locations.ricevimento.nome }}</h3>
+          <p class="location-card__address">{{ site.locations.ricevimento.indirizzo }}</p>
+          <a href="https://www.google.com/maps?q={{ site.locations.ricevimento.lat }},{{ site.locations.ricevimento.lng }}"
+             target="_blank" rel="noopener"
+             class="location-card__link">Apri in Google Maps</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ===== RSVP ===== #}
+<section class="section" id="rsvp">
+  <div class="container">
+    <h2 class="section__title">Conferma la tua Presenza</h2>
+
+    {% if site.googleFormUrl %}
+      <iframe class="rsvp__frame" src="{{ site.googleFormUrl }}" title="Modulo RSVP">
+        Caricamento del modulo...
+      </iframe>
+    {% else %}
+      <div class="rsvp__placeholder">
+        <p><strong>Il modulo RSVP sarà disponibile a breve!</strong></p>
+        <p>Qui potrai confermare la tua presenza, indicare allergie, intolleranze ed esigenze alimentari, e farci sapere se ti fermi a dormire.</p>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{# ===== GALLERY ===== #}
+<section class="section section--alt" id="gallery">
+  <div class="container">
+    <h2 class="section__title">I Nostri Momenti</h2>
+
+    {% if gallery.items.length > 0 %}
+      <div class="gallery-grid">
+        {% for item in gallery.items %}
+          {% if item.type === "video" %}
+            <div class="gallery-grid__item gallery-grid__item--video">
+              <iframe src="{{ item.src }}" title="{{ item.alt }}" allowfullscreen loading="lazy"></iframe>
+            </div>
+          {% else %}
+            <div class="gallery-grid__item">
+              <img src="{{ item.src }}" alt="{{ item.alt }}" loading="lazy">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="gallery__empty">Le foto arriveranno presto...</p>
+    {% endif %}
+
+  </div>
+</section>
+
+{# ===== REGALO ===== #}
+<section class="section" id="regalo">
+  <div class="container">
+    <div class="regalo">
+      <p class="regalo__message">
+        La vostra presenza è il regalo più grande.<br>
+        Se però volete viziarci un po', ecco le nostre coordinate bancarie!
+      </p>
+      <div class="regalo__card">
+        <p class="regalo__label">IBAN</p>
+        <p class="regalo__iban" id="iban-code">{{ site.iban.codice }}</p>
+        <p class="regalo__intestatario">{{ site.iban.intestatario }}</p>
+        <p class="regalo__label">Causale</p>
+        <p class="regalo__intestatario">{{ site.iban.causale }}</p>
+        <div class="regalo__qr" id="qr-code"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== EASTER EGG ===== #}
+<a href="/secret/" class="easter-egg" title="">🐟</a>
+
+{# ===== SCRIPTS ===== #}
+<script>
+  // Countdown
+  (function() {
+    const wedding = new Date('2026-06-13T14:00:00+02:00');
+    function update() {
+      const now = new Date();
+      const diff = wedding - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<p class="countdown__label" style="font-size:1.2rem">Oggi è il grande giorno!</p>';
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-days').textContent = d;
+      document.getElementById('cd-hours').textContent = h;
+      document.getElementById('cd-mins').textContent = m;
+      document.getElementById('cd-secs').textContent = s;
+    }
+    update();
+    setInterval(update, 1000);
+  })();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+  // QR Code per IBAN
+  (function() {
+    const iban = document.getElementById('iban-code').textContent.replace(/\s/g, '');
+    if (iban && !iban.includes('0000')) {
+      new QRCode(document.getElementById('qr-code'), {
+        text: iban,
+        width: 150,
+        height: 150,
+        colorDark: '#5F6F52',
+        colorLight: '#FEFAE0'
+      });
+    }
+  })();
+</script>

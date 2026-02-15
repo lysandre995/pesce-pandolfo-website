@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="Sito del matrimonio di {{ site.sposa }} e {{ site.sposo }} — {{ site.dataDisplay }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/#hero" class="nav__logo">V &amp; F</a>
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="/#programma">Programma</a></li>
+        <li><a href="/#location">Location</a></li>
+        <li><a href="/#rsvp">RSVP</a></li>
+        <li><a href="/#gallery">Gallery</a></li>
+        <li><a href="/#regalo">Regalo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__love">Viola &amp; Federico — {{ site.dataDisplay }}</p>
+      <p class="footer__credit">Website made by <a href="{{ site.footer.creditUrl }}" target="_blank" rel="noopener">{{ site.footer.credit }}</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav__toggle');
+    const navLinks = document.querySelector('.nav__links');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('nav__links--open');
+    });
+
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('nav__links--open');
+      });
+    });
+
+    // Sticky nav background on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('nav--scrolled', window.scrollY > 50);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "title": "Viola & Federico — 13 Giugno 2026",
+  "sposa": "Viola Luz Pandolfo",
+  "sposo": "Federico Pesce",
+  "data": "2026-06-13",
+  "dataDisplay": "13 Giugno 2026",
+  "giorno": "Sabato",
+  "orari": {
+    "ritrovo": "12:30",
+    "cerimonia": "14:00",
+    "ricevimento": "17:00"
+  },
+  "locations": {
+    "ritrovo": {
+      "nome": "Ritrovo Pre-Cerimonia",
+      "indirizzo": "Via Cazzuli 9A, 15060 Castelletto d'Orba AL",
+      "lat": 44.69505,
+      "lng": 8.718642,
+      "mapsEmbed": "https://maps.google.com/maps?q=44.69505,8.718642&z=15&output=embed"
+    },
+    "ricevimento": {
+      "nome": "Tenuta San Lorenzo",
+      "indirizzo": "Strada Comunale di Monterotondo 30, 15067 Novi Ligure AL",
+      "lat": 44.7450035,
+      "lng": 8.8009018,
+      "mapsEmbed": "https://maps.google.com/maps?q=44.7450035,8.8009018&z=15&output=embed"
+    }
+  },
+  "iban": {
+    "intestatario": "NOME COGNOME",
+    "codice": "IT00 X000 0000 0000 0000 0000 000",
+    "causale": "Regalo matrimonio Viola & Federico"
+  },
+  "googleFormUrl": "",
+  "footer": {
+    "credit": "Alessandro Alfano",
+    "creditUrl": "https://alessandroalfano.com"
+  }
+}
