@@ -8,22 +8,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 </head>
 <body>
 
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="/#hero" class="nav__logo">V &amp; F</a>
+      <a href="{{ '/' | url }}#hero" class="nav__logo">V &amp; F</a>
       <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links">
-        <li><a href="/#programma">Programma</a></li>
-        <li><a href="/#location">Location</a></li>
-        <li><a href="/#rsvp">RSVP</a></li>
-        <li><a href="/#gallery">Gallery</a></li>
-        <li><a href="/#regalo">Regalo</a></li>
+        <li><a href="{{ '/' | url }}#programma">Programma</a></li>
+        <li><a href="{{ '/' | url }}#location">Location</a></li>
+        <li><a href="{{ '/' | url }}#rsvp">RSVP</a></li>
+        <li><a href="{{ '/' | url }}#gallery">Gallery</a></li>
+        <li><a href="{{ '/' | url }}#regalo">Regalo</a></li>
       </ul>
     </div>
   </nav>

@@ -148,7 +148,7 @@ layout: layout.njk
             </div>
           {% else %}
             <div class="gallery-grid__item">
-              <img src="{{ item.src }}" alt="{{ item.alt }}" loading="lazy">
+              <img src="{{ item.src | url }}" alt="{{ item.alt }}" loading="lazy">
             </div>
           {% endif %}
         {% endfor %}
@@ -181,7 +181,7 @@ layout: layout.njk
 </section>
 
 {# ===== EASTER EGG ===== #}
-<a href="/secret/" class="easter-egg" title="">🐟</a>
+<a href="{{ '/secret/' | url }}" class="easter-egg" title="">🐟</a>
 
 {# ===== SCRIPTS ===== #}
 <script>

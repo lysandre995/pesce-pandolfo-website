@@ -5,7 +5,12 @@
       "Bash(source:*)",
       "Bash(nvm use:*)",
       "Bash(npm install:*)",
-      "Bash(npx @11ty/eleventy:*)"
+      "Bash(npx @11ty/eleventy:*)",
+      "Bash(curl:*)",
+      "Bash(pip3 install:*)",
+      "Bash(node -e:*)",
+      "Bash(npx --yes opentype.js)",
+      "Bash(npm ls:*)"
     ]
   }
 }
