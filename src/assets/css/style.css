@@ -667,11 +667,18 @@ a {
     left: 8px;
   }
 
+  .timeline__item {
+    flex-wrap: wrap;
+    padding-left: 30px;
+  }
+
   .timeline__time {
-    flex: 0 0 80px;
+    flex: 0 0 auto;
     text-align: left;
-    padding-right: 1rem;
+    padding-right: 0;
     font-size: 1.1rem;
+    width: 100%;
+    order: -1;
   }
 
   .timeline__dot {
@@ -680,7 +687,8 @@ a {
   }
 
   .timeline__content {
-    padding-left: 1.5rem;
+    padding-left: 0;
+    width: 100%;
   }
 
   .gallery-grid__item--video {
