@@ -1,10 +1,10 @@
 {
   "items": [
-    {
-      "type": "image",
-      "src": "/assets/images/placeholder-1.jpg",
-      "alt": "Viola e Federico",
-      "caption": ""
-    }
+    { "type": "image", "src": "/assets/img/10.23.37.jpg",   "alt": "Viola e Federico" },
+    { "type": "image", "src": "/assets/img/10.23.37-1.jpg", "alt": "Viola e Federico" },
+    { "type": "image", "src": "/assets/img/10.23.38.jpg",   "alt": "Viola e Federico" },
+    { "type": "image", "src": "/assets/img/10.23.38-1.jpg", "alt": "Viola e Federico" },
+    { "type": "image", "src": "/assets/img/10.23.38-2.jpg", "alt": "Viola e Federico" },
+    { "type": "image", "src": "/assets/img/10.23.39.jpg",   "alt": "Viola e Federico" }
   ]
 }

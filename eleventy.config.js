@@ -10,6 +10,6 @@ module.exports = function (eleventyConfig) {
     },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
-    pathPrefix: "/pesce-pandolfo-website/",
+    pathPrefix: "/",
   };
 };

@@ -47,6 +47,7 @@ layout: layout.njk
         <div class="timeline__content">
           <h3 class="timeline__title">Ritrovo</h3>
           <p class="timeline__desc">Vi aspettiamo per il ritrovo prima della cerimonia</p>
+          {% if site.programma.ritrovo.luogo %}<p class="timeline__luogo">{{ site.programma.ritrovo.luogo }}</p>{% endif %}
         </div>
       </div>
       <div class="timeline__item">
@@ -55,6 +56,7 @@ layout: layout.njk
         <div class="timeline__content">
           <h3 class="timeline__title">Cerimonia</h3>
           <p class="timeline__desc">Il momento tanto atteso</p>
+          {% if site.programma.cerimonia.luogo %}<p class="timeline__luogo">{{ site.programma.cerimonia.luogo }}</p>{% endif %}
         </div>
       </div>
       <div class="timeline__item">
@@ -62,7 +64,8 @@ layout: layout.njk
         <div class="timeline__dot"></div>
         <div class="timeline__content">
           <h3 class="timeline__title">Ricevimento</h3>
-          <p class="timeline__desc">Festeggiamo insieme alla Tenuta San Lorenzo</p>
+          <p class="timeline__desc">Festeggiamo insieme con voi</p>
+          {% if site.programma.ricevimento.luogo %}<p class="timeline__luogo">{{ site.programma.ricevimento.luogo }}</p>{% endif %}
         </div>
       </div>
     </div>
@@ -121,9 +124,12 @@ layout: layout.njk
     <h2 class="section__title">Conferma la tua Presenza</h2>
 
     {% if site.googleFormUrl %}
-      <iframe class="rsvp__frame" src="{{ site.googleFormUrl }}" title="Modulo RSVP">
-        Caricamento del modulo...
-      </iframe>
+      <p class="rsvp__hint">Problemi con il modulo? <a href="{{ site.googleFormUrl | replace('?embedded=true', '') }}" target="_blank" rel="noopener">Aprilo qui</a></p>
+      <div class="rsvp__wrapper">
+        <iframe class="rsvp__frame" src="{{ site.googleFormUrl }}" title="Modulo RSVP" scrolling="yes">
+          Caricamento del modulo...
+        </iframe>
+      </div>
     {% else %}
       <div class="rsvp__placeholder">
         <p><strong>Il modulo RSVP sarà disponibile a breve!</strong></p>

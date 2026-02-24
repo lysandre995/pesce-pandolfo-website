@@ -10,6 +10,17 @@
     "cerimonia": "14:00",
     "ricevimento": "17:00"
   },
+  "programma": {
+    "ritrovo": {
+      "luogo": "Via Cazzuli 9A, Castelletto d'Orba"
+    },
+    "cerimonia": {
+      "luogo": "Chiesa di Sant'Anna"
+    },
+    "ricevimento": {
+      "luogo": "Tenuta San Lorenzo, Novi Ligure"
+    }
+  },
   "locations": {
     "ritrovo": {
       "nome": "Ritrovo Pre-Cerimonia",
@@ -27,9 +38,9 @@
     }
   },
   "iban": {
-    "intestatario": "NOME COGNOME",
-    "codice": "IT00 X000 0000 0000 0000 0000 000",
-    "causale": "Regalo matrimonio Viola & Federico"
+    "intestatario": "Federico Pesce",
+    "codice": "IT66 B036 7401 6000 0054 3105 411",
+    "causale": "Viaggio di nozze"
   },
   "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfS4UxYhL1_KPeRnbIwsL_8c1fsGtoqYfAjjwrPypOzhx7gpg/viewform?embedded=true",
   "footer": {

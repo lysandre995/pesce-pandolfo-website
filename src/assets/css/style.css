@@ -363,6 +363,14 @@ a {
   color: var(--color-sage);
 }
 
+.timeline__luogo {
+  font-size: 0.8rem;
+  color: var(--color-sage);
+  opacity: 0.75;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
 /* ===== Location ===== */
 .locations {
   display: grid;
@@ -431,11 +439,25 @@ a {
 }
 
 /* ===== RSVP ===== */
+.rsvp__hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-sage);
+  margin-bottom: 1rem;
+}
+
+.rsvp__wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  border-radius: 12px;
+}
+
 .rsvp__frame {
   width: 100%;
-  min-height: 600px;
+  min-height: 800px;
   border: 0;
   border-radius: 12px;
+  display: block;
 }
 
 .rsvp__placeholder {
