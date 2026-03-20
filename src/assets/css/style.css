@@ -717,3 +717,10 @@ a {
     grid-column: span 1;
   }
 }
+
+/* ===== Minimal page ===== */
+.minimal-page .hero {
+  min-height: auto;
+  padding: 6rem 1.5rem 5rem;
+}
+
