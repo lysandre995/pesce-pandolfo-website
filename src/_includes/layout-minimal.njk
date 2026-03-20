@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.sposa | replace(" Luz Pandolfo", "") }} &amp; {{ site.sposo | replace(" Pesce", "") }}</title>
+  <meta name="description" content="Viola &amp; Federico — Save the Date">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
+</head>
+<body class="minimal-page">
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__love">Viola &amp; Federico</p>
+      <p class="footer__credit">Website made by <a href="{{ site.footer.creditUrl }}" target="_blank" rel="noopener">{{ site.footer.credit }}</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

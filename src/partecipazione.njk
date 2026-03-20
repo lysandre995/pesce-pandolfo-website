@@ -1,0 +1,77 @@
+---
+layout: layout-minimal.njk
+permalink: /partecipazione/
+---
+
+{# ===== HERO MINIMAL ===== #}
+<section class="hero" id="hero">
+  <h1 class="hero__names">Viola</h1>
+  <p class="hero__and">&amp;</p>
+  <h1 class="hero__names">Federico</h1>
+</section>
+
+{# ===== GALLERY ===== #}
+<section class="section section--alt" id="gallery">
+  <div class="container">
+    <h2 class="section__title">I Nostri Momenti</h2>
+
+    {% if gallery.items.length > 0 %}
+      <div class="gallery-grid">
+        {% for item in gallery.items %}
+          {% if item.type === "video" %}
+            <div class="gallery-grid__item gallery-grid__item--video">
+              <iframe src="{{ item.src }}" title="{{ item.alt }}" allowfullscreen loading="lazy"></iframe>
+            </div>
+          {% else %}
+            <div class="gallery-grid__item">
+              <img src="{{ item.src | url }}" alt="{{ item.alt }}" loading="lazy">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="gallery__empty">Le foto arriveranno presto...</p>
+    {% endif %}
+
+  </div>
+</section>
+
+{# ===== REGALO ===== #}
+<section class="section" id="regalo">
+  <div class="container">
+    <div class="regalo">
+      <p class="regalo__message">
+        Il vostro affetto è il regalo più grande.<br>
+        Se volete comunque farci un pensiero, ecco le nostre coordinate!
+      </p>
+      <div class="regalo__card">
+        <p class="regalo__label">IBAN</p>
+        <p class="regalo__iban" id="iban-code">{{ site.iban.codice }}</p>
+        <p class="regalo__intestatario">{{ site.iban.intestatario }}</p>
+        <p class="regalo__label">Causale</p>
+        <p class="regalo__intestatario">{{ site.iban.causale }}</p>
+        <div class="regalo__qr" id="qr-code"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== EASTER EGG — links to full site ===== #}
+<a href="{{ '/' | url }}" class="easter-egg" title="">🐟</a>
+
+{# ===== SCRIPTS ===== #}
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+  (function() {
+    const iban = document.getElementById('iban-code').textContent.replace(/\s/g, '');
+    if (iban && !iban.includes('0000')) {
+      new QRCode(document.getElementById('qr-code'), {
+        text: iban,
+        width: 150,
+        height: 150,
+        colorDark: '#5F6F52',
+        colorLight: '#FEFAE0'
+      });
+    }
+  })();
+</script>
